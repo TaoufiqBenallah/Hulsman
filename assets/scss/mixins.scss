@@ -1,0 +1,23 @@
+// Mixins Responsive
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == phone) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tablette) {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == desktop) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == bigdesktop) {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

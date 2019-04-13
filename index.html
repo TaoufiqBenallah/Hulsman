@@ -1,0 +1,888 @@
+<html>
+  <head>
+    <title>Leather Bag</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/scss/style.css" />
+    <!-- Font Awesome Icon Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo-nav">
+        <div class="header__logo-nav--logo">
+          <h1>LOGO</h1>
+        </div>
+        <div class="header__logo-nav--nav">
+          <nav>
+            <ul>
+              <li onclick="showHome()">HOME</li>
+              <li>MEN</li>
+              <li onclick="showShop()">SHOP</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__menu" onclick="manipulateSideMenu('o')">
+        <img src="assets/icons/menu.png" alt="" />
+      </div>
+      <div class="header__searchbar-panel">
+        <div class="header__searchbar-panel--div">
+          <div class="header__searchbar-panel--icons">
+            <div
+              style="position : relative;"
+              class="header__searchbar-panel--icons--1"
+              onclick="showCard()"
+            >
+              <img src="assets/icons/panel.jpg" />
+              <span
+                class="badge"
+                style="text-align: center; font-size: 14px; color:white; width: 16px; height: 16px; background: rgb(211, 19, 19); border-radius: 50%; position: absolute; left:15px; top: -4px;"
+              >
+                <span
+                  class="badge-value"
+                  style="display: block; margin: 2px 0; font-size: 10px;"
+                  >4</span
+                >
+              </span>
+            </div>
+            <div
+              class="header__searchbar-panel--icons--2"
+              onclick="manipulateSearchBar()"
+            >
+              <img id="close-loop" src="assets/icons/loop.jpg" />
+            </div>
+          </div>
+          <div class="header__searchbar-panel--search">
+            <input type="text" placeholder="Search.." />
+          </div>
+        </div>
+      </div>
+      <div class="header__side-menu">
+        <div class="header__side-menu--div">
+          <div class="header__side-menu--centered">
+            <div class="header__side-menu--search-zone">
+              <input type="text" placeholder="Click to Search Products .." />
+            </div>
+            <div class="header__side-menu--nav-zone">
+              <ul>
+                <li onclick="showHome()">HOME</li>
+                <li>MEN</li>
+                <li onclick="showShop()">SHOP</li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="header__side-menu--close"
+            onclick="manipulateSideMenu('x')"
+          >
+            <img src="assets/icons/close.jpg" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="loader"></div>
+
+    <section class="card">
+      <br /><br /><br />
+      <div class="card__product clear-fix">
+        <div class="card__product--photo">
+          <img />
+        </div>
+        <div class="card__product--title">
+          <h2></h2>
+        </div>
+        <div class="card__product--price">
+          <span style="font-weight: 600">PRICE</span>
+        </div>
+        <div class="card__product--quantity">
+          <span style="font-weight: 600; display: block; margin-top: 18px;"
+            >QUANTITY</span
+          >
+        </div>
+        <div class="card__product--total">
+          <span style="font-weight: 600">TOTAL</span>
+        </div>
+      </div>
+      <div class="card__product clear-fix">
+        <div class="card__product--photo">
+          <img src="assets/images/guest.jpg" alt="" />
+        </div>
+        <div class="card__product--title">
+          <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
+        </div>
+        <div class="card__product--price">
+          <span>$ 185,00</span>
+        </div>
+        <div class="card__product--quantity">
+          <select name="" id="">
+            <option value="">1</option>
+
+            <option value="">1</option>
+          </select>
+        </div>
+        <div class="card__product--total">
+          <span>$ 185,00</span>
+        </div>
+      </div>
+
+      <div class="card__product clear-fix">
+        <div class="card__product--photo">
+          <img src="assets/images/guest.jpg" alt="" />
+        </div>
+        <div class="card__product--title">
+          <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
+        </div>
+        <div class="card__product--price">
+          <span>$ 185,00</span>
+        </div>
+        <div class="card__product--quantity">
+          <select name="" id="">
+            <option value="">1</option>
+
+            <option value="">1</option>
+          </select>
+        </div>
+        <div class="card__product--total">
+          <span>$ 185,00</span>
+        </div>
+      </div>
+      <div class="card__product clear-fix">
+        <div class="card__product--photo">
+          <img src="assets/images/guest.jpg" alt="" />
+        </div>
+        <div class="card__product--title">
+          <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
+        </div>
+        <div class="card__product--price">
+          <span>$ 185,00</span>
+        </div>
+        <div class="card__product--quantity">
+          <select name="" id="">
+            <option value="">1</option>
+
+            <option value="">1</option>
+          </select>
+        </div>
+        <div class="card__product--total">
+          <span>$ 185,00</span>
+        </div>
+      </div>
+      <div class="card__product clear-fix">
+        <div class="card__product--photo">
+          <img src="assets/images/guest.jpg" alt="" />
+        </div>
+        <div class="card__product--title">
+          <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
+        </div>
+        <div class="card__product--price">
+          <span>$ 185,00</span>
+        </div>
+        <div class="card__product--quantity">
+          <select name="" id="">
+            <option value="">1</option>
+
+            <option value="">1</option>
+          </select>
+        </div>
+        <div class="card__product--total">
+          <span>$ 185,00</span>
+        </div>
+      </div>
+      <div style="margin-top: 30px;">
+        <button class="btn-msg" style="float: right;">CHECK OUT</button>
+      </div>
+    </section>
+
+    <section class="shop clear-fix">
+      <div class="filters clear-fix">
+        <div class="filter">
+          <div class="option clear-fix">
+            <div class="radio">
+              <div class="radio__selected"></div>
+            </div>
+            <div class="option__label">
+              <span>Popular</span>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="option clear-fix">
+            <div class="radio">
+              <div class="radio__selected"></div>
+            </div>
+            <div class="option__label">
+              <span>Newest</span>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="option clear-fix">
+            <div class="radio">
+              <div class="radio__selected"></div>
+            </div>
+            <div class="option__label">
+              <span>Cheapest</span>
+            </div>
+          </div>
+        </div>
+        <div class="filter">
+          <div class="option clear-fix">
+            <div class="radio">
+              <div class="radio__selected"></div>
+            </div>
+            <div class="option__label">
+              <span>Name</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shop__items">
+        <div
+          class="content__products--carosel__long--item"
+          style="width:29%; margin-right: 3.5%; margin-bottom: 40px;"
+        >
+          <div class="content__products--save">
+            <span>SAVE 66%</span>
+          </div>
+          <div class="content__products--img">
+            <img src="assets/images/main.jpg" alt="" />
+          </div>
+          <div class="content__products--title-data">
+            <h3>
+              Lorem ipsum dolor sit amet consect adipisicing elit.
+            </h3>
+            <span>Free Shipping</span>
+          </div>
+          <div class="content__products--price">
+            100$ - 50$
+          </div>
+          <div class="content__products--rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+
+        <div
+          class="content__products--carosel__long--item"
+          style="width:29%; margin-right: 3.5%; margin-bottom: 40px;"
+        >
+          <div class="content__products--save">
+            <span>SAVE 66%</span>
+          </div>
+          <div class="content__products--img">
+            <img src="assets/images/main.jpg" alt="" />
+          </div>
+          <div class="content__products--title-data">
+            <h3>
+              Lorem ipsum dolor sit amet consect adipisicing elit.
+            </h3>
+            <span>Free Shipping</span>
+          </div>
+          <div class="content__products--price">
+            100$ - 50$
+          </div>
+          <div class="content__products--rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+
+        <div
+          class="content__products--carosel__long--item"
+          style="width:29%; margin-right: 3.5%; margin-bottom: 40px;"
+        >
+          <div class="content__products--save">
+            <span>SAVE 66%</span>
+          </div>
+          <div class="content__products--img">
+            <img src="assets/images/main.jpg" alt="" />
+          </div>
+          <div class="content__products--title-data">
+            <h3>
+              Lorem ipsum dolor sit amet consect adipisicing elit.
+            </h3>
+            <span>Free Shipping</span>
+          </div>
+          <div class="content__products--price">
+            100$ - 50$
+          </div>
+          <div class="content__products--rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+
+        <div
+          class="content__products--carosel__long--item"
+          style="width:29%; margin-right: 3.5%; margin-bottom: 40px;"
+        >
+          <div class="content__products--save">
+            <span>SAVE 66%</span>
+          </div>
+          <div class="content__products--img">
+            <img src="assets/images/main.jpg" alt="" />
+          </div>
+          <div class="content__products--title-data">
+            <h3>
+              Lorem ipsum dolor sit amet consect adipisicing elit.
+            </h3>
+            <span>Free Shipping</span>
+          </div>
+          <div class="content__products--price">
+            100$ - 50$
+          </div>
+          <div class="content__products--rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="single-product clear-fix">
+      <div class="single-product__photo">
+        <img src="assets/images/guest.jpg" class="selected-img" />
+      </div>
+      <div class="single-product__data">
+        <div class="single-product__data--title">
+          <h2 class="selected-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </h2>
+        </div>
+
+        <div class="single-product__data--review">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="numbers"> 5 reviews</span>
+        </div>
+
+        <div class="single-product__data--price-quatity">
+          <div class="single-product__data--price">
+            <h3>
+              <span><strike class="old">$ 185, 80</strike></span>
+              <span class="new">$ 89,99</span>
+            </h3>
+            <h6>You saved $ 5,86</h6>
+          </div>
+          <div class="single-product__data--quantity">
+            <h4>Quantity</h4>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <div class="single-product__data--shipping">
+            <h2 class="selected-shipping">Free Shipping</h2>
+          </div>
+        </div>
+
+        <div class="single-product__data--add-to-card">
+          <button class="btn-msg">ADD TO CARD</button>
+        </div>
+
+        <div class="single-product__data--description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+            excepturi, harum minus, amet nemo impedit facere quaerat cupiditate,
+            soluta exercitationem minima. Nam, unde. Doloribus molestiae
+            inventore magni pariatur rem itaque corrupti libero assumenda
+            perspiciatis culpa, id, tempore repudiandae, ipsa sed nisi. Facere,
+            autem. Earum doloribus cum minus non natus sequi minima? Cum
+            excepturi repellat totam porro delectus cumque qui, aliquam sunt
+            consequatur quos nulla pariatur saepe possimus accusamus rerum magni
+            blanditiis vel culpa quam asperiores officia numquam soluta alias
+            nostrum. Tenetur hic ab earum rerum eum fugit tempora! Vel
+            blanditiis aspernatur maxime. Vel labore sequi assumenda, tempora
+            amet sapiente ab omnis perspiciatis, perferendis impedit maiores
+            voluptas voluptatibus consectetur maxime at corporis numquam rerum?
+            Quas ab ducimus iusto autem saepe! Dolorum officia doloribus
+            accusantium saepe perspiciatis sed facere aut repellendus beatae
+            sint illo cum libero, eos maxime expedita veniam! Blanditiis ad
+            veniam impedit voluptatum velit nam! Repellat facilis laudantium
+            veritatis deleniti quam quidem mollitia incidunt ex necessitatibus
+            est, consectetur magni veniam, impedit, pariatur labore! Illo odit
+            voluptas sapiente voluptates tempora quas asperiores consequatur
+            vero error corporis porro animi ipsa commodi minus doloremque,
+            blanditiis quia, accusantium alias neque aliquam vel facere officiis
+            quibusdam earum. Consequatur non asperiores sint dolorum, iste
+            deleniti debitis.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="reviews__write">
+        <h3>What do you think ?</h3>
+        <div class="reviews__write">
+          <div class="reviews__write--stars clear-fix">
+            <span style="color:yellow" class="fa fa-star"></span>
+            <span style="color:yellow" class="fa fa-star"></span>
+            <span style="color:yellow" class="fa fa-star"></span>
+            <span style="color:yellow" class="fa fa-star"></span>
+            <span style="color:yellow" class="fa fa-star"></span>
+          </div>
+          <button class="gray-btn">WRITE</button>
+        </div>
+        <div class="reviews__write--form">
+          <form>
+            <input placeholder="Your name.." type="text" />
+            <textarea
+              placeholder="Your review.."
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button
+              class="btn-msg"
+              style="padding: 8px 25px; font-size: 16px; float:right;"
+              type="submit"
+            >
+              POST
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="review__notes">
+        <h3>Reviews</h3>
+        <div class="reviews__review clear-fix">
+          <div class="reviews__review--profile">
+            <div class="reviews__review--profile__photo">
+              <img src="assets/images/customer.jpg" alt="" />
+            </div>
+
+            <div class="reviews__review--profile__name-duree">
+              <h4>Andy Anderson</h4>
+              <h6>6 days ago</h6>
+            </div>
+          </div>
+          <div class="reviews__review--content">
+            <div class="reviews__review--content__rating">
+              <span style="color:yellow" class="fa fa-star"></span>
+              <span style="color:yellow" class="fa fa-star"></span>
+              <span style="color:yellow" class="fa fa-star"></span>
+              <span style="color:yellow" class="fa fa-star"></span>
+              <span style="color:yellow" class="fa fa-star"></span>
+            </div>
+            <div class="reviews__review--content__opinion">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+                minus ipsum commodi obcaecati autem tempore vero? Numquam eius
+                est deserunt odio tenetur!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__review clear-fix">
+          <div class="reviews__review--profile">
+            <div class="reviews__review--profile__photo">
+              <img src="assets/images/customer.jpg" alt="" />
+            </div>
+
+            <div class="reviews__review--profile__name-duree">
+              <h4>Andy Anderson</h4>
+              <h6>6 days ago</h6>
+            </div>
+          </div>
+          <div class="reviews__review--content">
+            <div class="reviews__review--content__rating">
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="padding: 0 10px;"> 4.7 </span>
+            </div>
+            <div class="reviews__review--content__opinion">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+                minus ipsum commodi obcaecati autem tempore vero? Numquam eius
+                est deserunt odio tenetur!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__review clear-fix">
+          <div class="reviews__review--profile">
+            <div class="reviews__review--profile__photo">
+              <img src="assets/images/customer.jpg" alt="" />
+            </div>
+
+            <div class="reviews__review--profile__name-duree">
+              <h4>Andy Anderson</h4>
+              <h6>6 days ago</h6>
+            </div>
+          </div>
+          <div class="reviews__review--content">
+            <div class="reviews__review--content__rating">
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="padding: 0 10px;"> 4.7 </span>
+            </div>
+            <div class="reviews__review--content__opinion">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+                minus ipsum commodi obcaecati autem tempore vero? Numquam eius
+                est deserunt odio tenetur!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__review clear-fix">
+          <div class="reviews__review--profile">
+            <div class="reviews__review--profile__photo">
+              <img src="assets/images/customer.jpg" alt="" />
+            </div>
+
+            <div class="reviews__review--profile__name-duree">
+              <h4>Andy Anderson</h4>
+              <h6>6 days ago</h6>
+            </div>
+          </div>
+          <div class="reviews__review--content">
+            <div class="reviews__review--content__rating">
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="color:yellow" class="fa fa-star"> </span>
+              <span style="padding: 0 10px;"> 4.7 </span>
+            </div>
+            <div class="reviews__review--content__opinion">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+                minus ipsum commodi obcaecati autem tempore vero? Numquam eius
+                est deserunt odio tenetur!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="slide__dark-zone">
+        <div class="slide__dark-zone--content">
+          <h2>Welcome to Hulman handmade Lethaer bag</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+            quaerat?
+          </p>
+          <button>CONTACT US</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content__title">
+        <h3>FEATURED PRODUCTS</h3>
+      </div>
+      <div class="content__products">
+        <div class="content__products--carosel">
+          <div class="content__products--carosel__long">
+            <div
+              class="content__products--carosel__long--item"
+              onclick="chooseItem(0)"
+            >
+              <div class="content__products--save">
+                <span class="content__products--save-number">SAVE 66%</span>
+              </div>
+              <div class="content__products--img">
+                <img
+                  class="content__products--prod-img"
+                  src="assets/images/customer.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__products--title-data">
+                <h3 class="content__products--title-titre">
+                  First ipsum dolor sit amet consect adipisicing elit.
+                </h3>
+                <span class="content__products--free-shipping"
+                  >Free Shipping</span
+                >
+              </div>
+              <div class="content__products--price">
+                <span
+                  ><strike class="content__products--old-price"
+                    >100 $</strike
+                  ></span
+                >
+                -
+                <span class="content__products--new-price">50 $</span>
+              </div>
+              <div class="content__products--rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+            </div>
+            <div
+              class="content__products--carosel__long--item"
+              onclick="chooseItem(1)"
+            >
+              <div class="content__products--save">
+                <span class="content__products--save-number">SAVE 66%</span>
+              </div>
+              <div class="content__products--img">
+                <img
+                  class="content__products--prod-img"
+                  src="assets/images/main.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__products--title-data">
+                <h3 class="content__products--title-titre">
+                  Lorem ipsum dolor sit amet consect adipisicing elit.
+                </h3>
+                <span class="content__products--free-shipping"
+                  >Free Shipping</span
+                >
+              </div>
+              <div class="content__products--price">
+                <span
+                  ><strike class="content__products--old-price"
+                    >100 $</strike
+                  ></span
+                >
+                -
+                <span class="content__products--new-price">50 $</span>
+              </div>
+              <div class="content__products--rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+            </div>
+
+            <div
+              class="content__products--carosel__long--item"
+              onclick="chooseItem(2)"
+            >
+              <div class="content__products--save">
+                <span class="content__products--save-number">SAVE 66%</span>
+              </div>
+              <div class="content__products--img">
+                <img
+                  class="content__products--prod-img"
+                  src="assets/images/guaranti.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__products--title-data">
+                <h3 class="content__products--title-titre">
+                  Lorem ipsum dolor sit amet consect adipisicing elit.
+                </h3>
+                <span class="content__products--free-shipping"
+                  >Free Shipping</span
+                >
+              </div>
+              <div class="content__products--price">
+                <span
+                  ><strike class="content__products--old-price"
+                    >100 $</strike
+                  ></span
+                >
+                -
+                <span class="content__products--new-price">50 $</span>
+              </div>
+              <div class="content__products--rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+            </div>
+
+            <div
+              class="content__products--carosel__long--item"
+              onclick="chooseItem(3)"
+            >
+              <div class="content__products--save">
+                <span class="content__products--save-number">SAVE 66%</span>
+              </div>
+              <div class="content__products--img">
+                <img
+                  class="content__products--prod-img"
+                  src="assets/images/quality.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="content__products--title-data">
+                <h3 class="content__products--title-titre">
+                  Lorem ipsum dolor sit amet consect adipisicing elit.
+                </h3>
+                <span class="content__products--free-shipping"
+                  >Free Shipping</span
+                >
+              </div>
+              <div class="content__products--price">
+                <span
+                  ><strike class="content__products--old-price"
+                    >100 $</strike
+                  ></span
+                >
+                -
+                <span class="content__products--new-price">50 $</span>
+              </div>
+              <div class="content__products--rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content__next-prev">
+          <button style=" margin-left: 10px;" onclick="move(-1)"><</button>
+          <button style="float: right; margin-right: 59px;" onclick="move(1)">
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content__title">
+        <h3>PROMOTIONAL VIDEO</h3>
+      </div>
+      <div class="content__video">
+        <iframe src="https://www.youtube.com/embed/CnEfsWzlnCo"> </iframe>
+      </div>
+    </section>
+
+    <section class="content carosel">
+      <div class="content__title">
+        <h3>FEATURED PRODUCTS</h3>
+      </div>
+      <div class="content__aboutus">
+        <div class="content__aboutus--item">
+          <div class="content__aboutus--item__img">
+            <img src="assets/images/guaranti.jpg" alt="" />
+          </div>
+          <div class="content__aboutus--item__data">
+            <h3>Commited to Quality</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+              repudiandae sed dolor voluptates aperiam maiores porro quo optio
+              quae autem?
+            </p>
+          </div>
+        </div>
+
+        <div class="content__aboutus--item">
+          <div class="content__aboutus--item__img">
+            <img src="assets/images/customer.jpg" alt="" />
+          </div>
+          <div class="content__aboutus--item__data">
+            <h3>Commited to Quality</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+              repudiandae sed dolor voluptates aperiam maiores porro quo optio
+              quae autem?
+            </p>
+          </div>
+        </div>
+
+        <div class="content__aboutus--item">
+          <div class="content__aboutus--item__img">
+            <img src="assets/images/quality.jpg" alt="" />
+          </div>
+          <div class="content__aboutus--item__data">
+            <h3>Commited to Quality</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+              repudiandae sed dolor voluptates aperiam maiores porro quo optio
+              quae autem?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-us">
+      <div class="join-us__background">
+        <div class="join-us__send-email"></div>
+      </div>
+      <div class="join-us__social-media"></div>
+    </section>
+
+    <section class="content center">
+      <div class="content__start">
+        <h3>Get Started Today</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aut
+          animi iusto dolorem quidem. Vero, quisquamv ? ro, quisquamv ?
+        </p>
+      </div>
+
+      <button class="btn-msg" style="margin-bottom: 50px;">SEND MESSAGE</button>
+      <div class="content__message">
+        <form action="">
+          <div>
+            <span class="">Name</span>
+            <input type="text" />
+          </div>
+          <div><span class="">Email * </span> <input type="text" /></div>
+          <div><span class="">Message *</span> <input type="text" /></div>
+          <div>
+            <button class="btn-msg" style="margin:20px 0;">SEND</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="content footer">
+      <div class="footer--smaller">
+        <h4>HULSH HANDMADE LEATHER BAG</h4>
+        <h6>
+          17 SHRINATH COLONY KALKA MATA ROAD GANESH NAGAR UDAIPUR 313001
+          RAJASTHAN INDIA
+        </h6>
+        <div class="footer--spans">
+          <span class="footer--blue"> +91-9414757882 </span>
+          <span>Email :</span>
+          <span class="footer--blue">Piyushjoshi@outlook.com</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="assets/js/scr.js"></script>
+  <script src="assets/js/scr2.js"></script>
+  <script src="assets/js/handleViews.js"></script>
+</html>

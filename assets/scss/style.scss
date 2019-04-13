@@ -1,0 +1,990 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+section {
+  position: relative;
+}
+* {
+  font-family: "Roboto";
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 10%;
+  width: 80%;
+  position: relative;
+
+  &__logo-nav {
+    width: 100%;
+    &--logo {
+      width: 160px;
+      margin: 30px auto 20px auto;
+      text-align: center;
+      color: #333;
+      h1 {
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 10px 0;
+        cursor: pointer;
+        font-size: 24px;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 200;
+      }
+    }
+    &--nav {
+      width: 300px;
+      margin: 40px auto;
+      ul {
+        list-style: none;
+        li {
+          float: left;
+          margin-right: 45px;
+          padding-bottom: 10px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: 0.2s all ease;
+          &:last-child {
+            margin-right: 0px;
+          }
+          &:hover {
+            color: $dodgeBlue;
+            border-bottom: 1px solid $dodgeBlue;
+          }
+        }
+      }
+
+      @include responsive(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    img {
+      width: 30px;
+      height: 24px;
+      cursor: pointer;
+      display: none;
+      @include responsive(desktop) {
+        display: inline;
+      }
+    }
+  }
+
+  &__searchbar-panel {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    &--div {
+      float: right;
+      width: 220px;
+    }
+    &--search {
+      width: 145px;
+      float: right;
+      input {
+        width: 140px;
+        height: 35px;
+        border-radius: 2px;
+        border: none;
+        transition: 0.3s all ease;
+        font-size: 16px;
+        font-family: "Roboto";
+        &:focus {
+          padding-left: 10px;
+          border: 1px solid $dodgeBlue;
+        }
+      }
+    }
+    &--icons {
+      width: 70px;
+      margin: 5px 0 0 5px;
+      float: right;
+      &--1,
+      &--2 {
+        float: right;
+        width: 35px;
+        cursor: pointer;
+
+        position: relative;
+        img {
+          width: 26px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          transition: 0.4s all ease;
+          left: 0px;
+          top: 0px;
+          opacity: 1;
+        }
+        &:hover::after {
+          transform: scale(1.6);
+          opacity: 0;
+          background: rgba(0, 132, 219, 0.3);
+          border: 1px solid $dodgeBlue;
+        }
+      }
+    }
+    @include responsive(desktop) {
+      display: none;
+    }
+  }
+
+  &__side-menu {
+    position: fixed;
+    width: 0;
+    height: 100%;
+    background: white; //rgba(0, 140, 255, 0.2);
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 5;
+    transition: 0.4s all ease;
+    &--div {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 140, 255, 0.1);
+    }
+    &--centered {
+      width: 360px;
+      margin: 0 auto;
+      padding: 120px 0;
+      height: 300px;
+    }
+    &--close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    &--search-zone {
+      text-align: center;
+      input {
+        width: 100%;
+        height: 35px;
+        border-radius: 2px;
+        border: none;
+        transition: 0.3s all ease;
+        font-size: 18px;
+        font-family: "Roboto";
+        background: transparent;
+        text-align: center;
+        &:focus {
+          padding-left: 10px;
+          border: 1px solid $dodgeBlue;
+        }
+      }
+    }
+    &--nav-zone {
+      ul {
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        margin-top: 70px;
+        padding-left: 0;
+        li {
+          margin-bottom: 30px;
+          font-size: 18px;
+          padding-bottom: 5px;
+          cursor: pointer;
+          &:hover {
+            color: $dodgeBlue;
+            border-bottom: 1px solid $dodgeBlue;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(desktop) {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+// 350
+.slide {
+  position: relative;
+  width: 80%;
+  margin: 0 10%;
+  height: 500px;
+  background-image: url("../images/main.jpg");
+  border-radius: 1px;
+  margin-top: 120px;
+  &__dark-zone {
+    float: right;
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0 1px 1px 0;
+    &--content {
+      text-align: center;
+      width: 80%;
+      margin: 30px auto;
+      font-family: "Roboto";
+
+      color: white;
+      h2 {
+        font-size: 44px;
+        padding: 10px 10px 0 10px;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 600;
+      }
+      p {
+        padding: 0px 0 10px 0;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 18px;
+        line-height: 25px;
+        word-spacing: 2px;
+      }
+      button {
+        background: $dodgeBlue;
+        border: none;
+        border-radius: 2px;
+        padding: 12px 26px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+        }
+      }
+    }
+    @include responsive(desktop) {
+      width: 100%;
+    }
+  }
+  @include responsive(desktop) {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.content {
+  width: 80%;
+  margin: 50px 10%;
+  &__title {
+    h3 {
+      margin: 0;
+      font-family: "Roboto";
+      color: $dodgeBlue;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $dodgeBlue;
+      font-weight: 100;
+      transform: scaleY(1.02);
+      display: inline-block;
+      font-size: 22px;
+    }
+  }
+  &__video {
+    width: 100%;
+    iframe {
+      border: none;
+      width: 100%;
+      height: 600px;
+      margin-top: 40px;
+      @include responsive(desktop) {
+        height: 500px;
+      }
+      @include responsive(tablette) {
+        height: 400px;
+      }
+      @include responsive(phone) {
+        height: 300px;
+      }
+    }
+  }
+
+  &__products {
+    position: relative;
+    &--carosel {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      @include responsive(desktop) {
+        height: 300px;
+      }
+      &__long {
+        position: relative;
+        left: 0%;
+        width: 700%;
+        height: 390px;
+        margin-top: 5px;
+        transition: 0.6s all ease;
+        &--item {
+          width: 4.426%;
+          height: 390px;
+          position: relative;
+          box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
+          float: left;
+          cursor: pointer;
+          transition: 0.4s all ease;
+          margin-right: 0.35%;
+          border-radius: 2px;
+          &:hover {
+            box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.6);
+          }
+
+          &:first-child {
+            margin-left: 0.1%;
+          }
+          @include responsive(desktop) {
+            width: 14%;
+            height: 290px;
+          }
+        }
+        @include responsive(dekstop) {
+          height: 290px;
+        }
+      }
+    }
+    &--img {
+      width: 100%;
+      height: 180px;
+      @include responsive(desktop) {
+        width: 40%;
+        float: left;
+        height: 290px;
+      }
+      img {
+        width: 100%;
+        height: 180px;
+        border-radius: 0 2px 0 0;
+        @include responsive(desktop) {
+          height: 290px;
+        }
+      }
+    }
+    &--save {
+      right: 0;
+      width: 90px;
+      background: $dodgeBlue;
+      height: 34px;
+      position: absolute;
+      border-radius: 0 2px 0 2px;
+      box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.4);
+      text-align: center;
+      span {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        font-weight: 100;
+        position: relative;
+        top: 20%;
+        font-family: "Roboto";
+        transform: translateY(-50%);
+      }
+    }
+    &--title-data {
+      width: 85%;
+      margin: 0 auto;
+      text-align: center;
+      h3 {
+        font-family: "Roboto";
+        font-weight: 300;
+        padding: 2px 0 0 0;
+        font-size: 22px;
+      }
+      span {
+        color: #666;
+        letter-spacing: 1px;
+      }
+    }
+    &--price {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      @include responsive(desktop) {
+        left: 50%;
+      }
+    }
+    &--rating {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      span {
+        color: rgb(255, 230, 0);
+      }
+    }
+  }
+  &__next-prev {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    button {
+      width: 60px;
+      height: 60px;
+      border: 1px solid darken(#ecf8f8, 15%);
+      background: #ecf8f8;
+      border-radius: 50%;
+      color: $dodgeBlue;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  }
+
+  &__aboutus {
+    width: 100%;
+    margin-top: 50px;
+
+    &--item {
+      float: left;
+      width: 30%;
+      height: 440px;
+      background-color: white;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+      margin-bottom: 50px;
+
+      &__img {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        background: red;
+        img {
+          width: 100%;
+          border-radius: 2px 2px 0 0;
+        }
+      }
+
+      &__data {
+        text-align: center;
+        width: 90%;
+        margin: auto 5%;
+        h3 {
+          font-family: "Playfair Display", Georgia, serif;
+          font-size: 24px;
+        }
+        p {
+          line-height: 24px;
+          color: gray;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 5%;
+        @include responsive(desktop) {
+          margin-right: 0%;
+        }
+      }
+
+      @include responsive(desktop) {
+        width: 45%;
+        margin-right: 0%;
+        &:last-child {
+          margin-right: 10%;
+        }
+        &:first-child {
+          margin-right: 10%;
+        }
+      }
+      @include responsive(tablette) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__start {
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px 0;
+    h3 {
+      font-family: "Roboto";
+      font-size: 32px;
+      letter-spacing: 1px;
+      font-weight: 300;
+      coor: #333;
+    }
+    p {
+      line-height: 26px;
+      color: gray;
+      letter-spacing: 1px;
+      font-size: 17px;
+      font-family: "Roboto";
+    }
+
+    @include responsive(phone) {
+      width: 300px;
+      margin: 0 auto;
+      padding: 50px 0;
+    }
+  }
+
+  &__message {
+    width: 600px;
+    margin: 0 auto;
+    div {
+      position: relative;
+      span {
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        color: gray;
+      }
+      input {
+        border: none;
+        width: 90%;
+        margin: 0 5%;
+        height: 44px;
+        margin-bottom: 35px;
+        border-radius: 3px;
+        border-bottom: 1px solid lightblue;
+        padding: 0px 0;
+      }
+    }
+
+    @include responsive(phone) {
+      width: 300px;
+      margin: 0 auto;
+      padding: 50px 0;
+    }
+  }
+
+  @include responsive(desktop) {
+    width: 90%;
+    margin: 50px 5%;
+  }
+}
+
+// Additional
+.center {
+  text-align: center;
+}
+
+.carosel {
+  height: 520px;
+  @include responsive(desktop) {
+    height: 1000px;
+  }
+  @include responsive(tablette) {
+    height: 1500px;
+  }
+}
+
+.btn-msg {
+  background: $dodgeBlue;
+  padding: 15px 40px;
+  font-size: 17px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: "Roboto";
+  transition: 0.4s all ease;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($dodgeBlue, 10%);
+  }
+}
+
+.footer {
+  text-align: center;
+  h4 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 8px 0;
+  }
+  h6 {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #222;
+    font-weight: 100;
+    padding: 5px 0;
+  }
+  &--spans {
+    margin: 12px 0;
+  }
+  &--blue {
+    color: $dodgeBlue;
+  }
+  &--smaller {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.join-us {
+  width: 100%;
+  height: 350px;
+  &__background {
+    width: 100%;
+    height: 220px;
+    background-image: url("../images/main.jpg");
+  }
+  &__social-media {
+    width: 100%;
+    height: 130px;
+    background-color: rgba(0, 183, 255, 0.1);
+  }
+}
+
+// Second View
+.single-product {
+  width: 80%;
+  margin: 120px 10%;
+
+  &__photo,
+  &__data {
+    width: 45%;
+    margin-right: 5%;
+    float: left;
+  }
+  &__photo {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__data {
+    &--title {
+      h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 500;
+        transform: scaleY(1.1);
+        margin: 0;
+        font-size: 28px;
+      }
+    }
+    &--review {
+      margin-top: 10px;
+      span {
+        color: yellow;
+      }
+      .numbers {
+        color: $dodgeBlue;
+      }
+    }
+    &--price {
+      margin: 30px 0 10px 0;
+      h3 {
+        font-weight: 500;
+        margin: 0;
+        font-size: 22px;
+        .old {
+          font-weight: 100;
+          opacity: 0.8;
+          color: #b5bdcb;
+        }
+        .new {
+          font-weight: 500;
+        }
+      }
+      h6 {
+        font-weight: 500;
+        margin: 0;
+        font-size: 22px;
+        padding: 5px 0;
+        opacity: 0.8;
+        color: #b5bdcb;
+      }
+    }
+    &--quantity {
+      h4 {
+        margin: 0;
+        font-size: 22px;
+        color: #333;
+        font-weight: 200;
+      }
+      select {
+        width: 120px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 2px;
+        color: #666;
+        option {
+          padding: 10px 0;
+        }
+      }
+    }
+    &--shipping {
+      h2 {
+        color: #333;
+        font-weight: 100;
+        font-size: 18px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin-bottom: 35px;
+      }
+    }
+    &--description {
+      p {
+        line-height: 25px;
+        font-weight: 100;
+        font-size: 17px;
+        color: darken(#b5bdcb, 20%);
+      }
+    }
+  }
+}
+
+.reviews {
+  position: relative;
+  width: 80%;
+  margin: 0 10%;
+
+  &__write {
+    &--stars {
+    }
+    margin-bottom: 60px;
+    &--form {
+      input {
+        width: 100%;
+        padding-left: 10px;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 17px;
+        color: #555;
+        border: 1px solid #b5bdcb;
+        margin-bottom: 10px;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        height: 120px;
+        border-radius: 5px;
+        font-size: 17px;
+        color: #555;
+        border: 1px solid #b5bdcb;
+        margin-bottom: 10px;
+        min-width: 100%;
+        max-width: 100%;
+      }
+
+      margin-bottom: 40px;
+    }
+  }
+  h3 {
+    color: #666;
+    font-weight: 100;
+    border-bottom: 1px solid #b5bdcb;
+    padding-bottom: 7px;
+  }
+  &__review {
+    &:first-child {
+      margin: 40px 0 0 0;
+    }
+    &:last-child {
+      margin: 30px 0 50px 0;
+    }
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+    &--content {
+      width: 76%;
+      float: left;
+      p {
+        color: #666;
+        line-height: 25px;
+      }
+    }
+    &--profile {
+      width: 24%;
+      height: 80px;
+      float: left;
+      &__photo {
+        width: 18%;
+        float: left;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+      &__name-duree {
+        width: 80%;
+        float: left;
+        h4,
+        h6 {
+          margin: 0;
+        }
+        h4 {
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+        h6 {
+          font-size: 13px;
+          font-weight: 300;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+.clear-fix::after {
+  content: "";
+  visibility: visible;
+  clear: both;
+  display: block;
+}
+
+.gray-btn {
+  color: lighten(#b5bdcb, 10%);
+  background-color: #666;
+  border: none;
+  font-size: 16px;
+  border-radius: 2px;
+  font-weight: 100;
+  padding: 10px 35px;
+  position: relative;
+  top: -20px;
+  cursor: pointer;
+  float: right;
+  transition: 0.4s all ease;
+  &:hover {
+    background-color: #555;
+    color: white;
+  }
+}
+
+.shop {
+  width: 80%;
+  margin: 120px 10% 0 10%;
+  &__items {
+    width: 100%;
+  }
+}
+
+.filters {
+  width: 47%;
+  margin: 0 auto 80px auto;
+}
+.filter {
+  float: left;
+  width: 140px;
+}
+.option {
+  &__label {
+    float: left;
+    margin-top: -2px;
+    span {
+      padding: 0 10px;
+    }
+  }
+}
+
+.radio {
+  float: left;
+  border: 1px solid $dodgeBlue;
+  border-radius: 1px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  &__selected {
+    width: 10px;
+    height: 10px;
+    margin: 2px 1.5px;
+    background-color: $dodgeBlue;
+  }
+}
+
+// Loader
+.loader {
+  border: 10px solid #b5bdcb;
+  border-radius: 50%;
+  border-top: 10px solid $dodgeBlue;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 240px auto 240px auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+// Loader
+
+.card {
+  width: 80%;
+  margin: 100px 10% 200px 10%;
+  &__product {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b5bdcb;
+    &--photo,
+    &--title,
+    &--total,
+    &--quantity,
+    &--price {
+      float: left;
+    }
+    &--price,
+    &--total,
+    &--quantity {
+      width: 15%;
+    }
+    &--title {
+      width: 50%;
+      h4 {
+        margin-top: 3%;
+        margin-left: 10%;
+      }
+    }
+    &--photo {
+      width: 5%;
+      img {
+        width: 100%;
+        border-radius: 2px;
+        margin-top: 8%;
+      }
+    }
+    &--price,
+    &--total {
+      span {
+        display: block;
+        margin-top: 10%;
+      }
+    }
+
+    &--quantity {
+      select {
+        margin-top: 5%;
+        width: 50%;
+        padding: 10px 0;
+        border: 1px solid #b5bdcb;
+        border-radius: 2px;
+      }
+    }
+    &--total {
+      span {
+        float: right;
+      }
+    }
+  }
+}
