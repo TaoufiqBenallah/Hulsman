@@ -485,6 +485,7 @@ body {
 .content__products--price {
   position: absolute;
   bottom: 20px;
+  
   left: 20px;
 }
 
